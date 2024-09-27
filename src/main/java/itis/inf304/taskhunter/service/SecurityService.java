@@ -1,28 +1,36 @@
 package itis.inf304.taskhunter.service;
 
+import itis.inf304.taskhunter.dao.UserDao;
 import itis.inf304.taskhunter.entities.User;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 
 public class SecurityService {
 
-    public static boolean register(HttpServletRequest resp, User user) {
+
+    public boolean register(ServletContext context, User user) {
         try{
-            resp.setAttribute("User", user);
+            context.setAttribute("newUser", user);
             return true;
         } catch (Exception e){
             e.printStackTrace();
             return false;
         }
     }
-    public static boolean login(HttpServletRequest req, HttpServletResponse resp, User user) {
-        if (req.getAttribute("User") != null) {
 
+    public boolean login(ServletContext context, User user) throws Exception {
+        try {
+            UserDao dao = (UserDao) context.getAttribute("userDao");
+            User dbUser = dao.getUserByEmail(user.getEmail());
+            return user.getEmail().equals(dbUser.getEmail()) && user.getPassword().equals(dbUser.getPassword());
+        } catch (Exception e){
+            throw new Exception("Ошибка авторизации", e);
         }
     }
-    public static boolean logout(HttpServletRequest resp) {
-
-    }
-    pu
+//    public static boolean logout(HttpServletRequest resp) {
+//
+//    }
 }
