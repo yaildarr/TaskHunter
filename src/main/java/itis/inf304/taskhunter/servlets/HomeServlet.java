@@ -10,9 +10,9 @@ import java.io.IOException;
 @WebServlet("")
 public class HomeServlet extends HttpServlet {
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().println("fdsfsd");
         getServletContext().getRequestDispatcher("/WEB-INF/view/index.jsp").forward(req, resp);
     }
 }
