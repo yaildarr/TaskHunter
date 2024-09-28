@@ -10,6 +10,7 @@ import java.sql.SQLException;
 
 public class SecurityService {
 
+    User dbUser;
 
     public boolean register(ServletContext context, User user) {
         try{
@@ -24,7 +25,7 @@ public class SecurityService {
     public boolean login(ServletContext context, User user) throws Exception {
         try {
             UserDao dao = (UserDao) context.getAttribute("userDao");
-            User dbUser = dao.getUserByEmail(user.getEmail());
+            dbUser = dao.getUserByEmail(user.getEmail());
             return user.getEmail().equals(dbUser.getEmail()) && user.getPassword().equals(dbUser.getPassword());
         } catch (Exception e){
             throw new Exception("Ошибка авторизации", e);
