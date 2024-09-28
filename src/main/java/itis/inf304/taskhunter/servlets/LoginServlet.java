@@ -16,9 +16,16 @@ import java.io.IOException;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
-    SecurityService securityService = (SecurityService) getServletContext().getAttribute("securityService");
-    UserDao userDao = (UserDao) getServletContext().getAttribute("userDao");
+    SecurityService securityService;
+    UserDao userDao;
     User user;
+
+    @Override
+    public void init() throws ServletException {
+        securityService = (SecurityService) getServletContext().getAttribute("securityService");
+        userDao = (UserDao) getServletContext().getAttribute("userDao");
+    }
+
 
 
     @Override
@@ -35,13 +42,13 @@ public class LoginServlet extends HttpServlet {
                 user = userDao.getUserByEmail(email);
                 HttpSession session = req.getSession();
                 session.setAttribute("user", user.getUsername());
-                resp.sendRedirect("/index.jsp");
+                resp.sendRedirect("/home");
             } else {
                 req.setAttribute("errorMessage", "Неверный логин или пароль");
-                req.getRequestDispatcher("login.jsp").forward(req, resp);
+                req.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req, resp);
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("ошибка проверки",e);
         }
     }
 }
