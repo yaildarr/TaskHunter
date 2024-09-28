@@ -20,7 +20,7 @@ public class ConnectionProvider {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/taskhunter", "root", "546741qwerty");
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException("Ошибка подключения к базе данных",e);
         }
     }
 

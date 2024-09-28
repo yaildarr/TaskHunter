@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="<c:url value = "/style/bootstrap.min.css"/>">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header style="background-color: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #e0e0e0;">
@@ -17,17 +18,17 @@
 <%--                </div>--%>
                 <nav>
                     <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
-                        <li><a href="<c:url value = "/WEB-INF/view/index.jsp"/>" style="text-decoration: none; color: #007bff;">Главная</a></li>
+                        <li><a href="<c:url value = "/"/>" style="text-decoration: none; color: #007bff;">Главная</a></li>
                         <li><a href="<c:url value = "/WEB-INF/view/categories.jsp"/>" style="text-decoration: none; color: #007bff;">Категории</a></li>
                         <li><a style="text-decoration: none; color: #007bff;">Поиск</a></li>
                         <li><a href="<c:url value = "/WEB-INF/view/about.jsp"/>" style="text-decoration: none; color: #007bff;">О нас</a></li>
                         <li><a href="<c:url value = "/WEB-INF/view/contact.jsp"/>" style="text-decoration: none; color: #007bff;">Контакты</a></li>
                         <c:if test="${ empty user}">
-                            <li><a href="<c:url value = "/WEB-INF/view/login.jsp"/>" style="text-decoration: none; color: #007bff;">Вход</a></li>
-                            <li><a href="<c:url value = "/WEB-INF/view/register.jsp"/>" style="text-decoration: none; color: #007bff;">Регистрация</a></li>
+                            <li><a href="<c:url value = "/login"/>" style="text-decoration: none; color: #007bff;">Вход</a></li>
+                            <li><a href="<c:url value = "/register"/>" style="text-decoration: none; color: #007bff;">Регистрация</a></li>
                         </c:if>
                         <c:if test="${not empty user}">
-                            <li><a href="<c:url value = "/WEB-INF/view/profile.jsp"/>" style="text-decoration: none; color: #007bff;">Профиль</a></li>
+                            <li><a href="<c:url value = "/WEB-INF/view/profile.jsp"/>" style="text-decoration: none; color: #007bff;">${user}</a></li>
                         </c:if>
                     </ul>
                 </nav>

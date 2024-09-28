@@ -18,18 +18,19 @@ public class UserDao extends AbstractController{
     public User getUserByEmail(String email) throws SQLException {
         try {
             PreparedStatement ps = (getPrepareStatement("SELECT * FROM user WHERE email = ?"));
+            ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
             boolean found = rs.next();
             if (found) {
                 return new User(
                         rs.getInt("id"),
                         rs.getString("email"),
-                        rs.getString("password"),
+                        rs.getString("password_hash"),
                         rs.getString("username"),
-                        rs.getString("number")
+                        rs.getString("phone")
                 );
             } else {
-                return null;
+                throw new SQLException("User not found");
             }
         } catch (SQLException e) {
             throw new SQLException("Can't get user from db.", e);
