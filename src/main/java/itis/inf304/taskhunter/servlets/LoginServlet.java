@@ -41,7 +41,8 @@ public class LoginServlet extends HttpServlet {
             if (securityService.login(getServletContext(), new User(email, password))) {
                 user = userDao.getUserByEmail(email);
                 HttpSession session = req.getSession();
-                session.setAttribute("user", user.getUsername());
+                session.setAttribute("username", user.getUsername());
+                session.setAttribute("user", user);
                 resp.sendRedirect("/home");
             } else {
                 req.setAttribute("errorMessage", "Неверный логин или пароль");

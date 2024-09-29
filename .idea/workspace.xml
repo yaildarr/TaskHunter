@@ -9,19 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="login">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/style/style.css" afterDir="false" />
+    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="login service done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/util/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/util/ConnectionProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +101,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -239,7 +238,7 @@
       <workItem from="1727372837148" duration="5450000" />
       <workItem from="1727379539890" duration="7752000" />
       <workItem from="1727387347618" duration="6826000" />
-      <workItem from="1727448498472" duration="23953000" />
+      <workItem from="1727448498472" duration="33062000" />
     </task>
     <task id="LOCAL-00001" summary="architecture">
       <option name="closed" value="true" />
@@ -297,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727460669355</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="login service done">
+      <option name="closed" value="true" />
+      <created>1727533036101</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727533036101</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,28 +344,10 @@
     <MESSAGE value="add dao, some jsp, entities, SecurityFilter, SecurityService" />
     <MESSAGE value="&lt;&gt;" />
     <MESSAGE value="login" />
-    <option name="LAST_COMMIT_MESSAGE" value="login" />
+    <MESSAGE value="login service done" />
+    <option name="LAST_COMMIT_MESSAGE" value="login service done" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="itis.inf304.taskhunter.servlets.LoginServlet" memberName="user" />
