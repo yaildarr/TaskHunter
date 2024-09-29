@@ -141,3 +141,59 @@ footer {
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
+
+/* Центрирование формы и уменьшение её ширины */
+.registration-form {
+    max-width: 400px; /* Устанавливаем ширину формы */
+    margin: 20px auto; /* Уменьшили отступ сверху (с 50px до 20px) */
+    background-color: #ffffff; /* Белый фон для формы */
+    padding: 30px; /* Отступы внутри формы */
+    border-radius: 10px; /* Скругляем углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стиль для заголовков формы */
+.registration-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Отступы между элементами формы */
+.registration-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* Кнопка с отступом сверху */
+.registration-form .btn {
+    width: 100%; /* Кнопка на всю ширину */
+    padding: 12px;
+    font-size: 18px;
+}
+
+/* Центрирование формы авторизации и уменьшение её ширины */
+.login-form {
+    max-width: 400px; /* Устанавливаем ширину формы */
+    margin: 20px auto; /* Уменьшили отступ сверху до 20px */
+    background-color: #ffffff; /* Белый фон для формы */
+    padding: 30px; /* Отступы внутри формы */
+    border-radius: 10px; /* Скругляем углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стиль для заголовков формы */
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Отступы между элементами формы */
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+/* Кнопка с отступом сверху */
+.login-form .btn {
+    width: 100%; /* Кнопка на всю ширину */
+    padding: 12px;
+    font-size: 18px;
+}

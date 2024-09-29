@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="<c:url value = "/style/bootstrap.min.css"/>">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="<c:url value = "/style/style.css"/>">
     </head>
     <body>
         <header style="background-color: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #e0e0e0;">
@@ -28,7 +28,7 @@
                             <li><a href="<c:url value = "/register"/>" style="text-decoration: none; color: #007bff;">Регистрация</a></li>
                         </c:if>
                         <c:if test="${not empty user}">
-                            <li><a href="<c:url value = "/WEB-INF/view/profile.jsp"/>" style="text-decoration: none; color: #007bff;">${user}</a></li>
+                            <li><a href="<c:url value = "/WEB-INF/view/profile.jsp"/>" style="text-decoration: none; color: #007bff;">${username}</a></li>
                         </c:if>
                     </ul>
                 </nav>
