@@ -2,36 +2,53 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="<c:url value = "/style/bootstrap.min.css"/>">
-        <link rel="stylesheet" href="<c:url value = "/style/style.css"/>">
-    </head>
-    <body>
-        <header style="background-color: #f8f9fa; padding: 10px 20px; border-bottom: 1px solid #e0e0e0;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-<%--                <div>--%>
-<%--                    <a href="<c:url value = "WEB-INF/index.jsp"/>" style="text-decoration: none;">--%>
-<%--                        <img src="path/to/logo.png" alt="Логотип" style="height: 40px;">--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-                <nav>
-                    <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0;">
-                        <li><a href="<c:url value = "/"/>" style="text-decoration: none; color: #007bff;">Главная</a></li>
-                        <li><a href="<c:url value = "/WEB-INF/view/categories.jsp"/>" style="text-decoration: none; color: #007bff;">Категории</a></li>
-                        <li><a style="text-decoration: none; color: #007bff;">Поиск</a></li>
-                        <li><a href="<c:url value = "/WEB-INF/view/about.jsp"/>" style="text-decoration: none; color: #007bff;">О нас</a></li>
-                        <li><a href="<c:url value = "/WEB-INF/view/contact.jsp"/>" style="text-decoration: none; color: #007bff;">Контакты</a></li>
-                        <c:if test="${ empty user}">
-                            <li><a href="<c:url value = "/login"/>" style="text-decoration: none; color: #007bff;">Вход</a></li>
-                            <li><a href="<c:url value = "/register"/>" style="text-decoration: none; color: #007bff;">Регистрация</a></li>
-                        </c:if>
-                        <c:if test="${not empty user}">
-                            <li><a href="<c:url value = "/WEB-INF/view/profile.jsp"/>" style="text-decoration: none; color: #007bff;">${username}</a></li>
-                        </c:if>
-                    </ul>
-                </nav>
+<head>
+    <meta charset="UTF-8">
+    <title>JSP Page</title>
+    <link rel="stylesheet" href="<c:url value='/style/bootstrap.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/style/styles.css'/>">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<header class="p-3 text-bg-dark navbar-light">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="navbar-brand">
+                <img src="<c:url value='/img/logo-taskhunter.png'/>" class="bi me-2" width="40" height="40" alt="Taskhunter">
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="<c:url value='/WEB-INF/view/categories.jsp'/> " class="nav-link px-2 text-white" >Категории</a></li>
+                <li><a href="<c:url value='/'/> "class="nav-link px-2 text-white">Главная</a></li>
+                <li><a href="<c:url value='/WEB-INF/view/about.jsp'/> " class="nav-link px-2 text-white" >О нас</a></li>
+                <li><a href="<c:url value='/WEB-INF/view/contact.jsp'/> " class="nav-link px-2 text-white" >Контакты</a></li>
+            </ul>
+
+
+            <div class="text-end">
+                <c:if test="${empty user}">
+                    <a href="<c:url value='/login'/>" class="btn btn-light text-dark me-2">Вход</a>
+                    <a href="<c:url value='/register'/>" class="btn btn-primary">Регистрация</a>
+                </c:if>
+                <c:if test="${not empty user}">
+                    <div class="d-flex align-items-center">
+                        <a href="<c:url value='#'/>" class="btn btn-primary me-2">Разместить объявление</a>
+                        <div class="dropdown text-end">
+                            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" style="border: 2px solid #0078ff; border-radius: 50%;">
+                            </a>
+                            <ul class="dropdown-menu text-small">
+                                <li><a class="dropdown-item" href="#">Профиль</a></li>
+                                <li><a class="dropdown-item" href="#">Настройки</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Выйти</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </c:if>
             </div>
-        </header>
-        <div>
+        </div>
+    </div>
+</header>
+<div>
+
