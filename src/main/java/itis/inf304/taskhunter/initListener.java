@@ -1,5 +1,6 @@
 package itis.inf304.taskhunter;
 
+import itis.inf304.taskhunter.dao.JobDao;
 import itis.inf304.taskhunter.dao.UserDao;
 import itis.inf304.taskhunter.service.SecurityService;
 import itis.inf304.taskhunter.util.ConnectionProvider;
@@ -17,6 +18,7 @@ public class initListener implements ServletContextListener {
             ConnectionProvider connectionProvider = ConnectionProvider.getInstance();
             sce.getServletContext().setAttribute("userDao", new UserDao(connectionProvider));
             sce.getServletContext().setAttribute("securityService", new SecurityService());
+            sce.getServletContext().setAttribute("jobDao", new JobDao(connectionProvider));
         } catch (Exception e) {
             throw new RuntimeException("Ошибка иницализации" , e);
         }

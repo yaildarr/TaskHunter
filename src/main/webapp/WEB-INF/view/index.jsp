@@ -1,47 +1,47 @@
+<%@ page import="itis.inf304.taskhunter.entities.Job" %>
+<%@ page import="java.util.List" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="/WEB-INF/view/parts/header.jsp" %>
 
 <style>
     .card-custom {
-        border-radius: 25px; /* Увеличенное округление для карточек */
-        padding: 20px; /* Увеличенный паддинг для карточек */
+        border-radius: 25px;
+        padding: 20px;
     }
     .search-bar {
-        margin-top: 20px; /* Отступ сверху для строки поиска */
-        margin-bottom: 30px; /* Отступ снизу для строки поиска */
+        margin-top: 20px;
+        margin-bottom: 30px;
     }
     .search-bar input {
-        height: 50px; /* Увеличенная высота строки поиска */
-        border-radius: 25px; /* Округление для строки поиска */
+        height: 50px;
+        border-radius: 25px;
     }
     .search-bar button {
-        border-radius: 20px; /* Увеличенное округление кнопки поиска */
-        height: 50px; /* Соответствующая высота кнопки */
+        border-radius: 20px;
+        height: 50px;
     }
     .vacancies-title {
-        font-size: 24px; /* Уменьшенный размер шрифта для заголовка */
-        margin-top: 20px; /* Отступ сверху для заголовка */
-        margin-bottom: 20px; /* Отступ снизу для заголовка */
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 </style>
 
 <div class="container mt-4">
-    <!-- Форма поиска под заголовком -->
     <form class="row g-2 search-bar" role="search">
         <div class="col-10">
             <input type="search" class="form-control" placeholder="Поиск по вакансиям..." aria-label="Search" name="search">
         </div>
         <div class="col-2">
-            <button class="btn btn-primary w-100" type="submit">Найти</button> <!-- Кнопка поиска занимает всю ширину -->
+            <button class="btn btn-primary w-100" type="submit">Найти</button>
         </div>
     </form>
 
-    <!-- Заголовок для актуальных вакансий -->
     <h1 class="vacancies-title">Актуальные вакансии</h1>
 
     <div class="row mb-4">
-        <div class="col-md-3"> <!-- Уменьшили ширину области с фильтрами -->
+        <div class="col-md-3">
             <h5>Фильтры</h5>
             <form>
                 <div class="mb-3">
@@ -55,7 +55,7 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <%--@declare id="payment"--%><label for="payment" class="form-label">Оплата</label>
+                    <label for="payment" class="form-label">Оплата</label>
                     <input type="number" class="form-control" placeholder="Минимальная оплата" name="minPayment">
                     <input type="number" class="form-control mt-2" placeholder="Максимальная оплата" name="maxPayment">
                 </div>
@@ -63,71 +63,71 @@
             </form>
         </div>
 
-        <div class="col-md-9"> <!-- Увеличили ширину области с объявлениями -->
-            <!-- Список объявлений -->
-            <div class="row">
-                <c:forEach var="job" items="${jobList}">
-                    <div class="col-12 mb-3"> <!-- Увеличиваем отступы между карточками -->
-                        <div class="card card-custom shadow-sm"> <!-- Используем класс card-custom для округления -->
-                            <div class="card-body">
-                                <h5 class="card-title">${job.title}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">${job.postDate}</h6>
-                                <p class="card-text">${job.description}</p>
-                                <p class="card-text"><strong>Оплата: ${job.payment} руб.</strong></p>
-                                <a href="#" class="btn btn-primary">Откликнуться</a> <!-- Кнопка откликнуться -->
+        <div id="adContainer" class="col-md-9">
+            <!-- Здесь будут появляться объявления -->
+        </div>
+
+        <div id="loading" style="display: none;">Загрузка...</div>
+
+        <script>
+            let offset = 0;   // Смещение для загрузки следующих объявлений
+            const limit = 10;  // Сколько объявлений загружать за раз
+
+            // Функция для подгрузки объявлений
+            function loadAds() {
+                const loadingElement = document.getElementById('loading');
+                loadingElement.style.display = 'block';
+
+                fetch(`/loadAds?offset=${offset}&limit=${limit}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const adContainer = document.getElementById('adContainer');
+
+                        // Для каждого объявления создаем HTML и добавляем на страницу
+                        data.forEach(job => {
+                            const adElement = document.createElement('div');
+                            adElement.classList.add('job');
+                            adElement.innerHTML = `
+                            <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <div class="card card-custom shadow-sm">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${job.title}</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">${job.postDate}</h6>
+                                                <p class="card-text">${job.description}</p>
+                                                <p class="card-text"><strong>Оплата: ${job.payment} руб.</strong></p>
+                                                <a href="#" class="btn btn-primary">Откликнуться</a>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
-                        </div>
-                    </div>
-                </c:forEach>
+                            `;
+                            adContainer.appendChild(adElement);
+                        });
 
-                <!-- Примеры объявлений -->
-                <div class="col-12 mb-3">
-                    <div class="card card-custom shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Помощь с уборкой</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">30 сентября 2024</h6>
-                            <p class="card-text">Ищу помощника для уборки квартиры на выходные.</p>
-                            <p class="card-text"><strong>Оплата: 2000 руб.</strong></p>
-                            <a href="#" class="btn btn-primary">Откликнуться</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mb-3">
-                    <div class="card card-custom shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Репетитор по математике</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">29 сентября 2024</h6>
-                            <p class="card-text">Нужен репетитор для подготовки к экзаменам, занятия по вечерам.</p>
-                            <p class="card-text"><strong>Оплата: 1500 руб.</strong></p>
-                            <a href="#" class="btn btn-primary">Откликнуться</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mb-3">
-                    <div class="card card-custom shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Разнорабочий на стройку</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">28 сентября 2024</h6>
-                            <p class="card-text">Требуется разнорабочий для помощи на строительстве, опыт не обязателен.</p>
-                            <p class="card-text"><strong>Оплата: 2500 руб.</strong></p>
-                            <a href="#" class="btn btn-primary">Откликнуться</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        offset += limit;  // Увеличиваем смещение для следующего запроса
+                        loadingElement.style.display = 'none';
+                    })
+                    .catch(error => {
+                        console.error('Ошибка при загрузке объявлений:', error);
+                        loadingElement.style.display = 'none';
+                    });
+            }
 
-            <!-- Пагинация -->
-            <nav aria-label="Page navigation">
-                <ul class="pagination mt-3">
-                    <li class="page-item"><a class="page-link" href="#">Назад</a></li>
-                    <c:forEach var="i" begin="1" end="${totalPages}">
-                        <li class="page-item ${currentPage == i ? 'active' : ''}">
-                            <a class="page-link" href="?page=${i}">${i}</a>
-                        </li>
-                    </c:forEach>
-                    <li class="page-item"><a class="page-link" href="#">Вперед</a></li>
-                </ul>
-            </nav>
+            // Функция для отслеживания прокрутки
+            window.onscroll = function() {
+                // Если пользователь прокрутил до конца страницы
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    loadAds();  // Загружаем следующую порцию объявлений
+                }
+            };
+
+            // Загрузим первые объявления при загрузке страницы
+            loadAds();
+        </script>
+
+        <div class="col-md-9">
+
         </div>
     </div>
 </div>
