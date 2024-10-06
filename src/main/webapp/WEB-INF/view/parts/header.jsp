@@ -18,10 +18,10 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="<c:url value='/WEB-INF/view/categories.jsp'/> " class="nav-link px-2 text-white" >Категории</a></li>
-                <li><a href="<c:url value='/'/> "class="nav-link px-2 text-white">Главная</a></li>
-                <li><a href="<c:url value='/WEB-INF/view/about.jsp'/> " class="nav-link px-2 text-white" >О нас</a></li>
-                <li><a href="<c:url value='/WEB-INF/view/contact.jsp'/> " class="nav-link px-2 text-white" >Контакты</a></li>
+                <li><a href="<c:url value='/WEB-INF/view/categories.jsp'/> " class="nav-link px-2 link-primary text-white" >Категории</a></li>
+                <li><a href="<c:url value='/'/> "class="nav-link px-2 link-primary text-white">Главная</a></li>
+                <li><a href="<c:url value='/WEB-INF/view/about.jsp'/> " class="nav-link px-2 link-primary text-white" >О нас</a></li>
+                <li><a href="<c:url value='/WEB-INF/view/contact.jsp'/> " class="nav-link px-2 link-primary text-white ">Контакты</a></li>
             </ul>
 
 
@@ -41,7 +41,7 @@
                                 <li><a class="dropdown-item" href="#">Профиль</a></li>
                                 <li><a class="dropdown-item" href="#">Настройки</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Выйти</a></li>
+                                <li><a class="dropdown-item" href="<c:url value ='/logout'/>">Выйти</a></li>
                             </ul>
                         </div>
                     </div>

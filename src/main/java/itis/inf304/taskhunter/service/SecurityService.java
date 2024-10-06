@@ -50,7 +50,4 @@ public class SecurityService {
             throw new Exception("Ошибка авторизации", e);
         }
     }
-//    public static boolean logout(HttpServletRequest resp) {
-//
-//    }
 }
