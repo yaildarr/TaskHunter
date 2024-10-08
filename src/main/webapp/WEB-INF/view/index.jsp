@@ -78,7 +78,7 @@
                 const loadingElement = document.getElementById('loading');
                 loadingElement.style.display = 'block';
 
-                fetch(`/loadAds?offset=${offset}&limit=${limit}`)
+                fetch(`http://localhost:8080/home/api/jobs/?offset=${offset}&limit=${limit}`, {method: "POST"})
                     .then(response => response.json())
                     .then(data => {
                         const adContainer = document.getElementById('adContainer');
