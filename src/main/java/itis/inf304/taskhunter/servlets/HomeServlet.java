@@ -13,22 +13,30 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("")
+@WebServlet("/api/jobs")
 public class HomeServlet extends HttpServlet {
-    int offset;
-    int limit;
-    JobDao jobDao;
+
+    private JobDao jobDao;
 
     @Override
     public void init() throws ServletException {
         jobDao = (JobDao) getServletContext().getAttribute("jobDao");
     }
 
+    // Метод для отображения основной страницы
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Рендерим всю страницу с UI
+        getServletContext().getRequestDispatcher("/WEB-INF/view/index.jsp").forward(req, resp);
+    }
+
+    // Метод для асинхронной подгрузки вакансий (AJAX)
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int offset = 0;
         int limit = 10;
 
+        // Получаем параметры offset и limit
         String offsetParam = req.getParameter("offset");
         String limitParam = req.getParameter("limit");
 
@@ -50,7 +58,10 @@ public class HomeServlet extends HttpServlet {
             }
         }
 
+        // Получаем список вакансий с учетом offset и limit
         List<Job> jobs = jobDao.getJobs(offset, limit);
+
+        // Возвращаем JSON с вакансиями
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
         Gson gson = new Gson();

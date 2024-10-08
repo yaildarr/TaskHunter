@@ -9,12 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="home page filling &amp; logout servive">
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" afterDir="false" />
+    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="infinite scroll not ready">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
     </list>
@@ -50,7 +49,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/yaildarr/TaskHunter.git&quot;,
-    &quot;accountId&quot;: &quot;8001c098-9b04-43cf-816f-1c96f79512c0&quot;
+    &quot;accountId&quot;: &quot;8406b3ee-60d5-4802-96f7-a04d75a18748&quot;
   }
 }</component>
   <component name="JspContextManager">
@@ -89,7 +88,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 9.0.95.executor": "Run",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ildar/Documents/Java itis/Oris/TaskHunter/src/main/webapp",
     "node.js.detected.package.eslint": "true",
@@ -97,11 +96,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "inlay.hints",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -124,8 +123,16 @@
       <recent name="itis.inf304.taskhunter.entities" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.95">
+    <configuration name="console.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$APPLICATION_CONFIG_DIR$/consoles/db/f54f8923-3be8-4999-b42e-2fe58719e1f7/console.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 9.0.95" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.95" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/home/api/jobs" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="TaskHunter:war exploded">
           <settings>
@@ -211,12 +218,21 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Database Script.console.sql" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.95" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.console.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -241,6 +257,11 @@
       <workItem from="1727646383232" duration="3392000" />
       <workItem from="1727709548118" duration="10187000" />
       <workItem from="1727786185227" duration="18906000" />
+      <workItem from="1728294352981" duration="3621000" />
+      <workItem from="1728305501202" duration="1698000" />
+      <workItem from="1728307423143" duration="1000" />
+      <workItem from="1728308235686" duration="3398000" />
+      <workItem from="1728417033173" duration="2815000" />
     </task>
     <task id="LOCAL-00001" summary="architecture">
       <option name="closed" value="true" />
@@ -374,7 +395,8 @@
     <MESSAGE value="register done" />
     <MESSAGE value="beautiful header" />
     <MESSAGE value="home page filling &amp; logout servive" />
-    <option name="LAST_COMMIT_MESSAGE" value="home page filling &amp; logout servive" />
+    <MESSAGE value="infinite scroll not ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="infinite scroll not ready" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

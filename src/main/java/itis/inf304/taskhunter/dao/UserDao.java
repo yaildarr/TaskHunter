@@ -43,7 +43,7 @@ public class UserDao extends AbstractController {
                             rs.getString("phone")
                     );
                 } else {
-                    throw new SQLException("User not found");
+                    return null;
                 }
             }
         } catch (SQLException e) {

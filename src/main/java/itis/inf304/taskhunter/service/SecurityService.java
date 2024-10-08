@@ -45,6 +45,11 @@ public class SecurityService {
         try {
             dao = (UserDao) context.getAttribute("userDao");
             dbUser = dao.getUserByEmail(user.getEmail());
+
+            if (dbUser == null) {
+                return false;
+            }
+
             return user.getEmail().equals(dbUser.getEmail()) && hashPassword(user.getPassword()).equals(dbUser.getPassword());
         } catch (Exception e){
             throw new Exception("Ошибка авторизации", e);
