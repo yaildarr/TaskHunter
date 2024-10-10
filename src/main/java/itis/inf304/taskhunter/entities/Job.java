@@ -1,7 +1,5 @@
 package itis.inf304.taskhunter.entities;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class Job {
     private final int id;
@@ -11,9 +9,9 @@ public class Job {
     private final String description;
     private final Double payment;
     private final int categoryId;
-    private final LocalDateTime createdAt;
+    private final String createdAt;
 
-    public Job(int id, int userId, String title, String location, String description, Double payment, int categoryId, LocalDateTime createdAt) {
+    public Job(int id, int userId, String title, String location, String description, Double payment, int categoryId, String createdAt) {
         this.id = id;
         this.userId = userId;
         this.title = title;
@@ -28,7 +26,7 @@ public class Job {
         return categoryId;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
@@ -55,5 +53,6 @@ public class Job {
     public int getId() {
         return id;
     }
+
 }
 

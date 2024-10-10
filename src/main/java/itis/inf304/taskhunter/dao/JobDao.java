@@ -2,6 +2,7 @@ package itis.inf304.taskhunter.dao;
 
 import itis.inf304.taskhunter.entities.Job;
 import itis.inf304.taskhunter.util.ConnectionProvider;
+import itis.inf304.taskhunter.util.DateFormatter;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +36,7 @@ public class JobDao extends AbstractController{
                             rs.getString("description"),
                             rs.getDouble("payment"),
                             rs.getInt("category_id"),
-                            rs.getTimestamp("created_at").toLocalDateTime()
+                            DateFormatter.formatDateTime(rs.getTimestamp("created_at").toLocalDateTime())
                     );
                     jobs.add(job);
                 }

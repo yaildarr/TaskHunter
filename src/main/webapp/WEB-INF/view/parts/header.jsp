@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<c:url value='/style/bootstrap.min.css'/>">
     <link rel="stylesheet" href="<c:url value='/style/styles.css'/>">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/scroll.js"></script>
 </head>
 <body>
 <header class="p-3 text-bg-dark navbar-light">
