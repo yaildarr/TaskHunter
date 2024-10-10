@@ -1,5 +1,3 @@
-<%@ page import="itis.inf304.taskhunter.entities.Job" %>
-<%@ page import="java.util.List" %>
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="/WEB-INF/view/parts/header.jsp" %>
@@ -26,6 +24,11 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .filters-fixed {
+        position: sticky;
+        top: 20px;
+    }
+
 </style>
 
 <div class="container mt-4">
@@ -41,7 +44,7 @@
     <h1 class="vacancies-title">Актуальные вакансии</h1>
 
     <div class="row mb-4">
-        <div class="col-md-3">
+        <div class="col-md-3 filters-fixed">
             <h5>Фильтры</h5>
             <form>
                 <div class="mb-3">
@@ -69,62 +72,7 @@
 
         <div id="loading" style="display: none;">Загрузка...</div>
 
-        <script>
-            let offset = 0;   // Смещение для загрузки следующих объявлений
-            const limit = 10;  // Сколько объявлений загружать за раз
 
-            // Функция для подгрузки объявлений
-            function loadAds() {
-                const loadingElement = document.getElementById('loading');
-                loadingElement.style.display = 'block';
-
-                fetch(`http://localhost:8080/home/api/jobs/?offset=${offset}&limit=${limit}`, {method: "POST"})
-                    .then(response => response.json())
-                    .then(data => {
-                        const adContainer = document.getElementById('adContainer');
-
-                        // Для каждого объявления создаем HTML и добавляем на страницу
-                        data.forEach(job => {
-                            const adElement = document.createElement('div');
-                            adElement.classList.add('job');
-                            adElement.innerHTML = `
-                            <div class="row">
-                                    <div class="col-12 mb-3">
-                                        <div class="card card-custom shadow-sm">
-                                            <div class="card-body">
-                                                <h5 class="card-title">${job.title}</h5>
-                                                <h6 class="card-subtitle mb-2 text-muted">${job.postDate}</h6>
-                                                <p class="card-text">${job.description}</p>
-                                                <p class="card-text"><strong>Оплата: ${job.payment} руб.</strong></p>
-                                                <a href="#" class="btn btn-primary">Откликнуться</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                            `;
-                            adContainer.appendChild(adElement);
-                        });
-
-                        offset += limit;  // Увеличиваем смещение для следующего запроса
-                        loadingElement.style.display = 'none';
-                    })
-                    .catch(error => {
-                        console.error('Ошибка при загрузке объявлений:', error);
-                        loadingElement.style.display = 'none';
-                    });
-            }
-
-            // Функция для отслеживания прокрутки
-            window.onscroll = function() {
-                // Если пользователь прокрутил до конца страницы
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    loadAds();  // Загружаем следующую порцию объявлений
-                }
-            };
-
-            // Загрузим первые объявления при загрузке страницы
-            loadAds();
-        </script>
 
         <div class="col-md-9">
 
