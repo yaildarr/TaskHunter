@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="TaskHunter:war" />
       <artifact name="TaskHunter:war exploded" />
     </artifacts-to-build>
   </component>
@@ -10,14 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="infinite scroll not ready">
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/util/DateFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ChatServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ProfileServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/webSockets/ChatEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/chat.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/Job.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="JavaScript File" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -51,8 +56,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/yaildarr/TaskHunter.git&quot;,
-    &quot;accountId&quot;: &quot;8406b3ee-60d5-4802-96f7-a04d75a18748&quot;
+    &quot;url&quot;: &quot;https://github.com/yaildarr/TaskHunter&quot;,
+    &quot;accountId&quot;: &quot;8001c098-9b04-43cf-816f-1c96f79512c0&quot;
   }
 }</component>
   <component name="JspContextManager">
@@ -86,33 +91,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DateFormatter.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 9.0.95.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ildar/Documents/Java itis/Oris/TaskHunter/src/main/webapp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DateFormatter.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TaskHunter [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TaskHunter [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.95.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ildar/Documents/Java itis/Oris/TaskHunter/src/main/webapp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp" />
@@ -149,10 +156,9 @@
     <configuration name="Tomcat 9.0.95" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.95" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/home/api/jobs" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="TaskHunter:war exploded">
+        <artifact name="TaskHunter:war">
           <settings>
             <option name="CONTEXT_PATH" value="/home" />
           </settings>
@@ -232,7 +238,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="TaskHunter:war exploded" />
+          <artifact name="TaskHunter:war" />
         </option>
       </method>
     </configuration>
@@ -251,8 +257,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.22855.74" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.22855.74" />
       </set>
     </attachedChunks>
   </component>
@@ -283,6 +289,23 @@
       <workItem from="1728308235686" duration="3398000" />
       <workItem from="1728417033173" duration="3813000" />
       <workItem from="1728571447556" duration="4780000" />
+      <workItem from="1730451894582" duration="2840000" />
+      <workItem from="1730458975299" duration="2735000" />
+      <workItem from="1730462311611" duration="31000" />
+      <workItem from="1730790504962" duration="19298000" />
+      <workItem from="1730971791582" duration="38000" />
+      <workItem from="1731063269446" duration="118000" />
+      <workItem from="1731063543199" duration="1114000" />
+      <workItem from="1731065738048" duration="18000" />
+      <workItem from="1731143347206" duration="569000" />
+      <workItem from="1731144642322" duration="110000" />
+      <workItem from="1731147905742" duration="5061000" />
+      <workItem from="1731419095455" duration="25000" />
+      <workItem from="1731578463805" duration="11000" />
+      <workItem from="1731578667159" duration="19000" />
+      <workItem from="1731578722546" duration="13000" />
+      <workItem from="1731670346288" duration="459000" />
+      <workItem from="1731672677617" duration="2575000" />
     </task>
     <task id="LOCAL-00001" summary="architecture">
       <option name="closed" value="true" />

@@ -20,7 +20,7 @@ public class UserDao extends AbstractController {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getPassword());
-            ps.setString(4, user.getNumber().toString());
+            ps.setString(4, user.getNumber());
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
