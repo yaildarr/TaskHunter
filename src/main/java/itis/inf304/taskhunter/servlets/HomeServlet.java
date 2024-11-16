@@ -23,7 +23,6 @@ public class HomeServlet extends HttpServlet {
         jobDao = (JobDao) getServletContext().getAttribute("jobDao");
     }
 
-    // Метод для отображения основной страницы
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/WEB-INF/view/index.jsp").forward(req, resp);

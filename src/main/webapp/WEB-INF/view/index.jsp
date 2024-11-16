@@ -3,10 +3,6 @@
 <%@include file="/WEB-INF/view/parts/header.jsp" %>
 
 <style>
-    .card-custom {
-        border-radius: 25px;
-        padding: 20px;
-    }
     .search-bar {
         margin-top: 20px;
         margin-bottom: 30px;
@@ -70,7 +66,7 @@
             <!-- Здесь будут появляться объявления -->
         </div>
 
-        <div id="loading" style="display: none;">Загрузка...</div>
+        <div id="loading" style="display:none;">Загрузка...</div>
 
 
 

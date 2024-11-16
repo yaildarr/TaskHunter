@@ -1,5 +1,7 @@
 package itis.inf304.taskhunter.servlets;
 
+import itis.inf304.taskhunter.entities.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,14 +11,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebServlet("/logout")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/Profile")
+public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession(false);
-        if (session != null) {
-            session.invalidate();
-        }
-        resp.sendRedirect(getServletContext().getContextPath() + "/api/jobs");
+        super.doGet(req, resp);
+        HttpSession session = req.getSession();
+        User user = (User) session.getAttribute("user");
+
     }
 }
