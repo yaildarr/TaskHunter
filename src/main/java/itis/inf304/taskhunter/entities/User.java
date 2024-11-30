@@ -9,6 +9,7 @@ public class User implements Serializable {
     private String username;
     private String photoURL;
     private String number;
+    private String description;
 
     public User(int id,String email, String password, String username, String photoURL, String number) {
         this.id = id;
@@ -19,6 +20,24 @@ public class User implements Serializable {
         this.number = number;
     }
 
+    public User(int id, String email, String password, String username, String photoURL, String number, String description) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.username = username;
+        this.photoURL = photoURL;
+        this.number = number;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public User(String email, String password, String username, String photoURL, String number) {
         this.email = email;
         this.password = password;
@@ -26,7 +45,6 @@ public class User implements Serializable {
         this.photoURL = photoURL;
         this.number = number;
     }
-
     public User(String email, String password, String username, String number) {
         this.email = email;
         this.password = password;

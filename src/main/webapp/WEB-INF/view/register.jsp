@@ -2,9 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="/WEB-INF/view/parts/header.jsp" %>
 
-<body>
 <div class="container">
-    <div class="registration-form"> <!-- Добавляем новый div для стилизации формы -->
+    <div class="registration-form">
         <h2>Регистрация</h2>
 
         <c:if test="${not empty errorMessage}">
@@ -40,6 +39,5 @@
         <p class="mt-3 text-center">Уже есть аккаунт? <a href="<c:url value='/login' />">Войти</a></p>
     </div>
 </div>
-</body>
 
 <%@include file="/WEB-INF/view/parts/footer.jsp" %>

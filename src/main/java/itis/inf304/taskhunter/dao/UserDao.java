@@ -29,6 +29,47 @@ public class UserDao extends AbstractController {
         }
     }
 
+    public boolean updateUser(User user) throws SQLException {
+        String sql = "UPDATE user SET username = ?, email = ?, phone = ? , description = ? WHERE id = ?";
+        try (PreparedStatement ps = getPrepareStatement(sql)){
+            ps.setString(1, user.getUsername());
+            ps.setString(2, user.getEmail());
+            ps.setString(3, user.getNumber());
+            ps.setString(4, user.getDescription());
+            ps.setInt(5, user.getId());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.err.println("Ошибка при обновлении пользователя " + e.getMessage());
+            return false;
+        }
+    }
+
+    public User getUserById(int id) throws SQLException {
+        String sql = "SELECT * FROM user WHERE id = ?";
+        try (PreparedStatement ps = getPrepareStatement(sql)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new User(
+                            rs.getInt("id"),
+                            rs.getString("email"),
+                            rs.getString("password_hash"),
+                            rs.getString("username"),
+                            rs.getString("photoURL"),
+                            rs.getString("phone")
+                    );
+                } else {
+                    return null;
+                }
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Не удалось получить пользователя из базы данных.", e);
+        }
+    }
+
+
+
     public User getUserByEmail(String email) throws SQLException {
         String sql = "SELECT * FROM user WHERE email = ?";
         try (PreparedStatement ps = getPrepareStatement(sql)) {

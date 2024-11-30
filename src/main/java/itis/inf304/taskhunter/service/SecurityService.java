@@ -1,21 +1,29 @@
 package itis.inf304.taskhunter.service;
 
+import itis.inf304.taskhunter.dao.LoginAttemptDao;
 import itis.inf304.taskhunter.dao.UserDao;
+import itis.inf304.taskhunter.dto.UserLoginDto;
+import itis.inf304.taskhunter.dto.UserRegistrationDto;
 import itis.inf304.taskhunter.entities.User;
-
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 public class SecurityService {
 
-    User dbUser;
-    UserDao dao;
+    private static final Logger LOG = Logger.getLogger(SecurityService.class.getName());
 
+    User dbUser;
+    UserDao userDao;
+    LoginAttemptDao loginAttemptDao;
+
+    public SecurityService(UserDao userDao, LoginAttemptDao loginAttemptDao) {
+        this.userDao = userDao;
+        this.loginAttemptDao = loginAttemptDao;
+    }
 
     public String hashPassword(String password) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -27,31 +35,41 @@ public class SecurityService {
         return sb.toString();
     }
 
-    public boolean register(ServletContext context, User user) {
+    public boolean updateUser(User user) throws SQLException {
+        return userDao.updateUser(user);
+    }
+
+    public boolean register(UserRegistrationDto user) {
         try{
-            dao = (UserDao) context.getAttribute("userDao");
-            boolean isUserCreated = dao.newUser(new User(
+            LOG.info("newUser " + user.getUsername() + " " + user.getPassword() + " " + user.getEmail() + " " + user.getPassword());
+            boolean isUserCreated = userDao.newUser(new User(
                     user.getEmail(),
                     hashPassword(user.getPassword()),
                     user.getUsername(),
                     user.getNumber()
             ));
-            return true;
+            return isUserCreated;
         } catch (Exception e){
             throw new RuntimeException(e);
         }
     }
-    public boolean login(ServletContext context, User user) throws Exception {
+    public boolean login(ServletContext context, UserLoginDto user) throws Exception {
         try {
-            dao = (UserDao) context.getAttribute("userDao");
-            dbUser = dao.getUserByEmail(user.getEmail());
-
+            dbUser = userDao.getUserByEmail(user.getEmail());
             if (dbUser == null) {
+                loginAttemptDao.saveLoginAttempt(user.getEmail(),false);
                 return false;
             }
-
-            return user.getEmail().equals(dbUser.getEmail()) && hashPassword(user.getPassword()).equals(dbUser.getPassword());
+            if (user.getEmail().equals(dbUser.getEmail()) && hashPassword(user.getPassword()).equals(dbUser.getPassword())){
+                loginAttemptDao.saveLoginAttempt(user.getEmail(),true);
+                return true;
+            }
+            else {
+                loginAttemptDao.saveLoginAttempt(user.getEmail(),false);
+                return false;
+            }
         } catch (Exception e){
+            loginAttemptDao.saveLoginAttempt(user.getEmail(),false);
             throw new Exception("Ошибка авторизации", e);
         }
     }

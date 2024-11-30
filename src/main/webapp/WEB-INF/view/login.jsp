@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="/WEB-INF/view/parts/header.jsp" %>
 
-<body>
+
 <div class="container">
     <div class="login-form">
         <h2>Вход в систему</h2>
@@ -28,6 +28,5 @@
         <p class="mt-3">Нет аккаунта? <a href="<c:url value='/register' />">Зарегистрируйтесь</a></p>
     </div>
 </div>
-</body>
 
 <%@include file="/WEB-INF/view/parts/footer.jsp" %>
