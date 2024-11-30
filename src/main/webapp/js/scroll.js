@@ -1,7 +1,6 @@
-let offset = 0;   // Смещение для загрузки следующих объявлений
-const limit = 10;  // Сколько объявлений загружать за раз
+let offset = 0;
+const limit = 10;
 
-// Функция для подгрузки объявлений
 function loadAds() {
     const loadingElement = document.getElementById('loading');
     loadingElement.style.display = 'block';
@@ -30,7 +29,7 @@ function loadAds() {
                 adContainer.appendChild(adElement);
             });
 
-            offset += limit;  // Увеличиваем смещение для следующего запроса
+            offset += limit;
             loadingElement.style.display = 'none';
         })
         .catch(error => {
@@ -39,17 +38,14 @@ function loadAds() {
         });
 }
 
-// Функция для отслеживания прокрутки
 window.onscroll = function() {
-    // Если пользователь прокрутил до конца страницы
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        loadAds();  // Загружаем следующую порцию объявлений
+        loadAds();
     }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadAds();  // Загрузим первые объявления при загрузке страницы
+    loadAds();
 });
 
-// Загрузим первые объявления при загрузке страницы
 loadAds();

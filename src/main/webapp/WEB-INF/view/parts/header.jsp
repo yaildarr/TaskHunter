@@ -1,3 +1,4 @@
+<%@ page import="itis.inf304.taskhunter.entities.User" %>
 <%@page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -7,10 +8,14 @@
     <title>JSP Page</title>
     <link rel="stylesheet" href="<c:url value='/style/bootstrap.min.css'/>">
     <link rel="stylesheet" href="<c:url value='/style/styles.css'/>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/scroll.js"></script>
 </head>
 <body>
+<%
+    User user = (User)session.getAttribute("user");
+    %>
 <header class="p-3 text-bg-dark navbar-light">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -21,8 +26,8 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="<c:url value='/WEB-INF/view/categories.jsp'/> " class="nav-link px-2 link-primary text-white" >Категории</a></li>
                 <li><a href="<c:url value='/'/> "class="nav-link px-2 link-primary text-white">Главная</a></li>
-                <li><a href="<c:url value='/WEB-INF/view/about.jsp'/> " class="nav-link px-2 link-primary text-white" >О нас</a></li>
-                <li><a href="<c:url value='/WEB-INF/view/contact.jsp'/> " class="nav-link px-2 link-primary text-white ">Контакты</a></li>
+                <li><a href="<c:url value='/about'/> " class="nav-link px-2 link-primary text-white" >О нас</a></li>
+                <li><a href="<c:url value='/contact'/> " class="nav-link px-2 link-primary text-white ">Контакты</a></li>
             </ul>
 
 
@@ -39,7 +44,7 @@
                                 <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" style="border: 2px solid #0078ff; border-radius: 50%;">
                             </a>
                             <ul class="dropdown-menu text-small">
-                                <li><a class="dropdown-item" href="#">Профиль</a></li>
+                                <li><a class="dropdown-item" href="<c:url value = '/profile'/>">Профиль</a></li>
                                 <li><a class="dropdown-item" href="#">Настройки</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="<c:url value ='/logout'/>">Выйти</a></li>
