@@ -13,5 +13,6 @@ public class AboutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/WEB-INF/view/about.jsp").forward(req, resp);
+        String text = "fdsfs";
     }
 }
