@@ -6,7 +6,6 @@
 <div class="container">
     <div class="login-form">
         <h2>Вход в систему</h2>
-        <!-- Отображение сообщения об ошибке -->
         <c:if test="${not empty errorMessage}">
             <div class="alert alert-danger" role="alert">
                     ${errorMessage}

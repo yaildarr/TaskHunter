@@ -41,17 +41,28 @@
                     <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-primary px-5 py-2">Отправить</button>
+                    <button type="submit" class="btn btn-primary px-5 py-2" data-bs-toggle="modal" data-bs-target="#SendMessageModal">Отправить</button>
                 </div>
             </form>
         </div>
     </div>
 
 </div>
+<c:if test="${sendMessageStatus != null}">
+<div class="modal fade" id="SendMessageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <h4 class="modal-body">Сообщение отправлено. Спасибо!</h4>
+        </div>
+    </div>
+</div>
+</c:if>
 
 <%@ include file="/WEB-INF/view/parts/footer.jsp" %>
 
-<!-- Подключение иконок Bootstrap (если необходимо) -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 

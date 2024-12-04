@@ -4,7 +4,9 @@ import itis.inf304.taskhunter.dao.JobDao;
 import itis.inf304.taskhunter.dao.LoginAttemptDao;
 import itis.inf304.taskhunter.dao.MessageDao;
 import itis.inf304.taskhunter.dao.UserDao;
+import itis.inf304.taskhunter.service.JobService;
 import itis.inf304.taskhunter.service.SecurityService;
+import itis.inf304.taskhunter.service.UserService;
 import itis.inf304.taskhunter.util.ConnectionProvider;
 
 import javax.servlet.ServletContextEvent;
@@ -24,6 +26,8 @@ public class initListener implements ServletContextListener {
             sce.getServletContext().setAttribute("securityService", new SecurityService((UserDao) sce.getServletContext().getAttribute("userDao"), (LoginAttemptDao) sce.getServletContext().getAttribute("loginAttemptDao")));
             sce.getServletContext().setAttribute("jobDao", new JobDao(connectionProvider));
             sce.getServletContext().setAttribute("messageDao", new MessageDao(connectionProvider));
+            sce.getServletContext().setAttribute("jobService", new JobService((JobDao) sce.getServletContext().getAttribute("jobDao")));
+            sce.getServletContext().setAttribute("userService", new UserService((UserDao) sce.getServletContext().getAttribute("userDao")));
         } catch (Exception e) {
             throw new RuntimeException("Ошибка иницализации" , e);
         }

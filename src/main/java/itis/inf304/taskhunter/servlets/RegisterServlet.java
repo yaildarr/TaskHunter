@@ -47,7 +47,7 @@ public class RegisterServlet extends HttpServlet {
                 resp.addCookie(cookie);
                 session.setAttribute("username", user.getUsername());
                 session.setAttribute("user", user);
-                resp.sendRedirect(getServletContext().getContextPath()+"/api/jobs");
+                resp.sendRedirect(getServletContext().getContextPath()+"/jobs");
             } else {
                 req.setAttribute("errorMessage", "Не удалось зарегестрироваться");
                 req.getRequestDispatcher("/WEB-INF/view/register.jsp").forward(req, resp);

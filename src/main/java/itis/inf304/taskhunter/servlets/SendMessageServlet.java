@@ -39,11 +39,12 @@ public class SendMessageServlet extends HttpServlet {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        }
-        try {
-            messageDao.sendMessage(new Message(user.getId(),name,email,message));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        }else{
+            try {
+                req.getSession().setAttribute("sendMessageStatus", (messageDao.sendMessage(new Message(user.getId(), name, email, message))));
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

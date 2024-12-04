@@ -56,7 +56,7 @@ public class UserDao extends AbstractController {
                             rs.getString("email"),
                             rs.getString("password_hash"),
                             rs.getString("username"),
-                            rs.getString("photoURL"),
+                            rs.getString("profile_picture"),
                             rs.getString("phone")
                     );
                 } else {
@@ -81,7 +81,8 @@ public class UserDao extends AbstractController {
                             rs.getString("email"),
                             rs.getString("password_hash"),
                             rs.getString("username"),
-                            rs.getString("phone")
+                            rs.getString("phone"),
+                            rs.getString("description")
                     );
                 } else {
                     return null;

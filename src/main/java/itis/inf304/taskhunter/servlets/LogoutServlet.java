@@ -13,10 +13,16 @@ import java.io.IOException;
 public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
         if (session != null) {
             session.invalidate();
         }
-        resp.sendRedirect(getServletContext().getContextPath() + "/api/jobs");
+        resp.sendRedirect(getServletContext().getContextPath() + "/jobs");
     }
+
 }

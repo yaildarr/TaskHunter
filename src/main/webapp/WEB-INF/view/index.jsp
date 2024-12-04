@@ -54,7 +54,7 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="payment" class="form-label">Оплата</label>
+                    <label for="number" class="form-label">Оплата</label>
                     <input type="number" class="form-control" placeholder="Минимальная оплата" name="minPayment">
                     <input type="number" class="form-control mt-2" placeholder="Максимальная оплата" name="maxPayment">
                 </div>
@@ -63,7 +63,6 @@
         </div>
 
         <div id="adContainer" class="col-md-9">
-            <!-- Здесь будут появляться объявления -->
         </div>
 
         <div id="loading" style="display:none;">Загрузка...</div>

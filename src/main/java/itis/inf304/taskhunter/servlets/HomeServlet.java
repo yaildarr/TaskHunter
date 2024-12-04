@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/api/jobs")
+@WebServlet("/jobs")
 public class HomeServlet extends HttpServlet {
 
     private JobDao jobDao;
