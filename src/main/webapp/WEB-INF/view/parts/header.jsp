@@ -20,7 +20,7 @@
 <header class="p-3 text-bg-dark navbar-light">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="<c:url value = '/api/jobs' />" class="navbar-brand">
+            <a href="<c:url value = '/jobs' />" class="navbar-brand">
                 <img src="<c:url value='/img/logo-taskhunter.png'/>" class="bi me-2" width="40" height="40" alt="Taskhunter">
             </a>
 
@@ -39,7 +39,7 @@
                 </c:if>
                 <c:if test="${not empty user}">
                     <div class="d-flex align-items-center">
-                        <a href="<c:url value='#'/>" class="btn btn-primary me-2">Разместить объявление</a>
+                        <a href="<c:url value='/createJob'/>" class="btn btn-primary me-2">Разместить объявление</a>
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" style="border: 2px solid #0078ff; border-radius: 50%;">

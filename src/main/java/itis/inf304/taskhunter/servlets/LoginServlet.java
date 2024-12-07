@@ -29,6 +29,19 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         getServletContext().getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req, resp);
+//        HttpSession session = req.getSession();
+//        if (session.getAttribute("user") != null) {
+//            resp.sendRedirect(getServletContext().getContextPath() + "/jobs");
+//        } else {
+//            Cookie[] cookie = req.getCookies();
+//            if (cookie != null) {
+//                for (Cookie c : cookie) {
+//                    if (c.getName().equals("user")) {
+//                        session.setAttribute("user", user);
+//                    }
+//                }
+//            }
+//        }
     }
 
     @Override

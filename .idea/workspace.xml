@@ -9,29 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="add new branch">
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dto/UserForJobDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/JobCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/JobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/JobDetailServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/jobDetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/img/logo-taskhunter.png" afterDir="false" />
+    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="add jobdetail screen">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/CreateJobServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/UploadFileServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/util/CloudinaryUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/createJob.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/SendMessageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/SendMessageServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/contact.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/jobDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/jobDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/scroll.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +285,7 @@
       <workItem from="1732972187341" duration="56000" />
       <workItem from="1733069613973" duration="994000" />
       <workItem from="1733141669270" duration="13070000" />
-      <workItem from="1733306458591" duration="12777000" />
+      <workItem from="1733306458591" duration="28205000" />
     </task>
     <task id="LOCAL-00001" summary="architecture">
       <option name="closed" value="true" />
@@ -451,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733141850745</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="add jobdetail screen">
+      <option name="closed" value="true" />
+      <created>1733325238076</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733325238076</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +504,8 @@
     <MESSAGE value="init" />
     <MESSAGE value="add contats, profile and other features" />
     <MESSAGE value="add new branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new branch" />
+    <MESSAGE value="add jobdetail screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jobdetail screen" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
