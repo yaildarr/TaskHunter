@@ -1,5 +1,6 @@
 package itis.inf304.taskhunter.dao;
 
+import itis.inf304.taskhunter.dto.CreateJobDto;
 import itis.inf304.taskhunter.entities.Job;
 import itis.inf304.taskhunter.servlets.JobDetailServlet;
 import itis.inf304.taskhunter.util.ConnectionProvider;
@@ -72,6 +73,23 @@ public class JobDao extends AbstractController{
             }
         } catch (SQLException e) {
         throw new SQLException("Не удалось получить объявление из базы данных.", e);
+        }
     }
+
+    public Boolean createJob(CreateJobDto job) throws SQLException {
+        String sql = "INSERT INTO job (user_id, title, location, description, payment, category_id, is_active) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement ps = getPrepareStatement(sql)) {
+            ps.setInt(1, job.getUserId());
+            ps.setString(2, job.getTitle());
+            ps.setString(3, job.getLocation());
+            ps.setString(4, job.getDescription());
+            ps.setDouble(5, job.getPayment());
+            ps.setInt(6, job.getCategoryId());
+            ps.setInt(7, Integer.parseInt("1"));
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            return false;
+        }
     }
 }

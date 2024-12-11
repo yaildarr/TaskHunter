@@ -11,7 +11,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/scroll.js"></script>
-
 </head>
 <body>
 <%
@@ -42,7 +41,7 @@
                         <a href="<c:url value='/createJob'/>" class="btn btn-primary me-2">Разместить объявление</a>
                         <div class="dropdown text-end">
                             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" style="border: 2px solid #0078ff; border-radius: 50%;">
+                                <img src="${user.photoURL}" alt="mdo" width="40" height="40" class="rounded-circle" style="border: 2px solid #0078ff; border-radius: 50%;">
                             </a>
                             <ul class="dropdown-menu text-small">
                                 <li><a class="dropdown-item" href="<c:url value = '/profile'/>">Профиль</a></li>

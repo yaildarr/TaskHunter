@@ -39,14 +39,13 @@ public class RegisterServlet extends HttpServlet {
         user = new UserRegistrationDto(username, email, number, password);
         try{
             if(securityService.register(user)){
-                int userId = userDao.getUserByEmail(email).getId();
-
+                User userId = userDao.getUserByEmail(email);
                 HttpSession session = req.getSession();
                 Cookie cookie = new Cookie("user_id", userId+"");
                 cookie.setMaxAge(24*60*60*3);
                 resp.addCookie(cookie);
-                session.setAttribute("username", user.getUsername());
-                session.setAttribute("user", user);
+                session.setAttribute("username", userId.getUsername());
+                session.setAttribute("user", userId);
                 resp.sendRedirect(getServletContext().getContextPath()+"/jobs");
             } else {
                 req.setAttribute("errorMessage", "Не удалось зарегестрироваться");

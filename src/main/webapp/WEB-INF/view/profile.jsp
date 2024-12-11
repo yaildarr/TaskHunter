@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card shadow-lg rounded-5 border-0">
                 <div class="card-body text-center p-4">
-                    <img src="https://github.com/mdo.png" alt="Фото профиля" class="img-fluid rounded-circle mb-4" style="width: 150px; height: 150px; border: 4px solid #fff; box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);">
+                    <img src="${user.photoURL}" alt="Фото профиля" class="img-fluid rounded-circle mb-4" style="width: 150px; height: 150px; border: 4px solid #fff; box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);">
 
 
                     <h2 class="text-dark fw-bold mb-2" style="font-size: 2rem;">${user.username}</h2>
@@ -56,8 +56,14 @@
                         <textarea class="form-control" id="description" name="description" rows="5" >${user.description}</textarea>
                     </div>
                     <div class="mb-3">
+                        <input type="hidden" id="photoUrl" name="photoUrl" value="${user.photoURL}">
                         <label for="avatar" class="form-label">Загрузить новое фото</label>
                         <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*">
+                        <img id="profileImage" src="${user.photoURL}" alt="Фото профиля" class="img-fluid rounded-circle mb-4" style="width: 150px; height: 150px; border: 4px solid #fff; box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);">
+                        <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
+                            <img id="loading-image" src=""<c:url value='/gif/loading-gif.gif'/>"" alt="Loading..." />
+                        </div>
+
                     </div>
                     <div class="d-flex justify-content-center gap-4 mt-4">
                         <button type="submit" class="btn btn-primary px-5 py-2 text-uppercase">Сохранить изменения</button>
@@ -68,6 +74,9 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/uploadImg.js"></script>
+
 
 <%@include file="/WEB-INF/view/parts/footer.jsp" %>
 

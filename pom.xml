@@ -10,6 +10,7 @@
     <name>TaskHunter</name>
     <packaging>war</packaging>
 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF_8</project.reporting.outputEncoding>

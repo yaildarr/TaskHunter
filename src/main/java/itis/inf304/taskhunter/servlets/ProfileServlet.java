@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class ProfileServlet extends HttpServlet {
         getServletContext().getRequestDispatcher("/WEB-INF/view/profile.jsp").forward(req, resp);
         session = req.getSession();
         user = (User) session.getAttribute("user");
+        LOG.info(user.getDescription() + user.getUsername());
     }
 
     @Override
@@ -46,8 +48,8 @@ public class ProfileServlet extends HttpServlet {
         String email = req.getParameter("email");
         String number = req.getParameter("number");
         String description = req.getParameter("description");
-        String photoUrl = req.getParameter("photoUrl");
-        LOG.info(username + " " + email + " " + number + " " + description + " " + photoUrl);
+        String photoUrl = (String) req.getSession().getAttribute("newPhotoUrl");
+        LOG.info(photoUrl + " -PhotoUrl");
         if (username != null && !username.isEmpty()) {
             user.setUsername(username);
         }
@@ -60,8 +62,10 @@ public class ProfileServlet extends HttpServlet {
         if (description != null && !description.isEmpty()) {
             user.setDescription(description);
         }
+        if (photoUrl != null && !photoUrl.isEmpty()) {
+            user.setPhotoURL(photoUrl);
+        }
         try {
-            LOG.info(user.getEmail() + " " + user.getUsername() + " " + user.getNumber() + " " + user.getDescription() + " " + user.getId());
             securityService.updateUser(user);
             session.setAttribute("user", user);
             resp.sendRedirect(getServletContext().getContextPath() + "/profile");

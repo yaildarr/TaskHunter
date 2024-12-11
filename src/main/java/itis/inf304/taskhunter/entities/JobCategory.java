@@ -32,6 +32,10 @@ public class JobCategory {
                 break;
         }
     }
+    public JobCategory(int id,String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public int getId() {
         return id;

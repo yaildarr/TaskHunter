@@ -1,5 +1,6 @@
 package itis.inf304.taskhunter.dao;
 
+import itis.inf304.taskhunter.dto.UserRegistrationDto;
 import itis.inf304.taskhunter.entities.User;
 import itis.inf304.taskhunter.util.ConnectionProvider;
 
@@ -14,13 +15,14 @@ public class UserDao extends AbstractController {
         super(connectionProvider);
     }
 
-    public boolean newUser(User user) {
-        String sql = "INSERT INTO user (username, email, password_hash, phone) VALUES (?, ?, ?, ?)";
+    public boolean newUser(UserRegistrationDto user) {
+        String sql = "INSERT INTO user (username, email, password_hash, phone, profile_picture) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement ps = getPrepareStatement(sql)) {
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getPassword());
             ps.setString(4, user.getNumber());
+            ps.setString(5, user.getPhotoURL());
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -30,13 +32,14 @@ public class UserDao extends AbstractController {
     }
 
     public boolean updateUser(User user) throws SQLException {
-        String sql = "UPDATE user SET username = ?, email = ?, phone = ? , description = ? WHERE id = ?";
+        String sql = "UPDATE user SET username = ?, email = ?, phone = ? , description = ?, profile_picture = ? WHERE id = ?";
         try (PreparedStatement ps = getPrepareStatement(sql)){
             ps.setString(1, user.getUsername());
             ps.setString(2, user.getEmail());
             ps.setString(3, user.getNumber());
             ps.setString(4, user.getDescription());
-            ps.setInt(5, user.getId());
+            ps.setString(5, user.getPhotoURL());
+            ps.setInt(6, user.getId());
             ps.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -81,6 +84,7 @@ public class UserDao extends AbstractController {
                             rs.getString("email"),
                             rs.getString("password_hash"),
                             rs.getString("username"),
+                            rs.getString("profile_picture"),
                             rs.getString("phone"),
                             rs.getString("description")
                     );

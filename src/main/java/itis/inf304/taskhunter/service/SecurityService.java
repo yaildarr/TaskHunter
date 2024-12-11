@@ -5,6 +5,8 @@ import itis.inf304.taskhunter.dao.UserDao;
 import itis.inf304.taskhunter.dto.UserLoginDto;
 import itis.inf304.taskhunter.dto.UserRegistrationDto;
 import itis.inf304.taskhunter.entities.User;
+import itis.inf304.taskhunter.util.GenerateDefaultIcon;
+
 import javax.servlet.ServletContext;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -42,18 +44,19 @@ public class SecurityService {
     public boolean register(UserRegistrationDto user) {
         try{
             LOG.info("newUser " + user.getUsername() + " " + user.getPassword() + " " + user.getEmail() + " " + user.getPassword());
-            boolean isUserCreated = userDao.newUser(new User(
-                    user.getEmail(),
-                    hashPassword(user.getPassword()),
+            boolean isUserCreated = userDao.newUser(new UserRegistrationDto(
                     user.getUsername(),
-                    user.getNumber()
+                    user.getEmail(),
+                    user.getNumber(),
+                    hashPassword(user.getPassword()),
+                    GenerateDefaultIcon.generateDefaultIcon(user.getUsername())
             ));
             return isUserCreated;
         } catch (Exception e){
             throw new RuntimeException(e);
         }
     }
-    public boolean login(ServletContext context, UserLoginDto user) throws Exception {
+    public boolean auth(ServletContext context, UserLoginDto user) throws Exception {
         try {
             dbUser = userDao.getUserByEmail(user.getEmail());
             if (dbUser == null) {
