@@ -9,34 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="docker">
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobCategoryDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dto/CreateJobDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/CreateJobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/JobCategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/util/GenerateDefaultIcon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/gif/loading-gif.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/uploadImg.js" afterDir="false" />
+    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="upload image done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/filter/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dto/UserRegistrationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dto/UserRegistrationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/JobCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/JobCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/CreateJobServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/CreateJobServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ProfileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/UploadFileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/UploadFileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/util/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/util/ConnectionProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/createJob.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/createJob.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/uploadImg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/uploadImg.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +79,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -111,12 +99,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GenerateDefaultIcon.executor": "Run",
+    "Maven.TaskHunter [--version].executor": "Run",
+    "Maven.TaskHunter [clean,install].executor": "Run",
     "Maven.TaskHunter [clean,package].executor": "Run",
     "Maven.TaskHunter [clean].executor": "Run",
     "Maven.TaskHunter [compile].executor": "Run",
     "Maven.TaskHunter [deploy].executor": "Run",
     "Maven.TaskHunter [install].executor": "Run",
     "Maven.TaskHunter [package].executor": "Run",
+    "Maven.TaskHunter [wrapper:wrapper].executor": "Run",
     "Maven.Unknown [clean,package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -130,11 +121,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "MavenSettings",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -159,6 +150,14 @@
       <recent name="itis.inf304.taskhunter.dao" />
       <recent name="itis.inf304.taskhunter.entities" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn --version" />
+      <command value="mvn wrapper:wrapper" />
+      <command value="mvn clean install" />
+      <command value="./mvnw clean install" />
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.95">
     <configuration name="DateFormatter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -334,7 +333,7 @@
       <workItem from="1733920249105" duration="626000" />
       <workItem from="1733921189415" duration="49000" />
       <workItem from="1733921275694" duration="836000" />
-      <workItem from="1733922606635" duration="18105000" />
+      <workItem from="1733922606635" duration="28238000" />
     </task>
     <task id="LOCAL-00001" summary="architecture">
       <option name="closed" value="true" />
@@ -512,7 +511,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733573659535</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="upload image done">
+      <option name="closed" value="true" />
+      <created>1733960802598</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733960802598</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +578,8 @@
     <MESSAGE value="add new branch" />
     <MESSAGE value="add jobdetail screen" />
     <MESSAGE value="docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker" />
+    <MESSAGE value="upload image done" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload image done" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

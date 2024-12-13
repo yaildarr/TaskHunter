@@ -60,8 +60,11 @@
                         <label for="avatar" class="form-label">Загрузить новое фото</label>
                         <input type="file" class="form-control" id="avatar" name="avatar" accept="image/*">
                         <img id="profileImage" src="${user.photoURL}" alt="Фото профиля" class="img-fluid rounded-circle mb-4" style="width: 150px; height: 150px; border: 4px solid #fff; box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);">
-                        <div id="loadingSpinner" class="spinner-border text-primary" role="status" style="display: none;">
-                            <img id="loading-image" src=""<c:url value='/gif/loading-gif.gif'/>"" alt="Loading..." />
+                        <div id="loadingSpinner" style="display: none; text-align: center;" class = "mt-3 d-flex">
+                            <img id="loading-image" src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif" alt="Loading..." style="width: 100px; height: 100px;" />
+                        </div>
+                        <div id="uploadMessage" class="text-success mt-2" style="display: none;">
+                            Фотография успешно загружена!
                         </div>
 
                     </div>

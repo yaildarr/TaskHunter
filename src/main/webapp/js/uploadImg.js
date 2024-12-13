@@ -1,24 +1,25 @@
 document.getElementById("avatar").addEventListener("change", function (event) {
     const fileInput = event.target;
     const formData = new FormData();
-    formData.append("file", fileInput.files[0]);  // Добавляем файл в formData
+    formData.append("file", fileInput.files[0]); // Добавляем файл в formData
 
-    // Показываем спиннер при начале загрузки
     document.getElementById("loadingSpinner").style.display = "inline-block";
-    document.getElementById("profileImage").style.display = "none";  // Скрываем изображение во время загрузки
+    document.getElementById("profileImage").style.display = "none";
+    document.getElementById("uploadMessage").style.display = "none"; // Скрываем сообщение
 
     fetch('http://localhost:8080/home/upload', {
         method: 'POST',
         body: formData
     })
         .then(response => {
-            return response.json();  // Ожидаем JSON от сервера
+            return response.json(); // Ожидаем JSON от сервера
         })
         .then(data => {
             if (data.fileUrl) {
-                alert("Файл успешно загружен: " + data.fileUrl);
-                // Обновляем изображение профиля после загрузки
+
                 document.getElementById("profileImage").src = data.fileUrl;
+                document.getElementById("uploadMessage").textContent = "Фотография успешно загружена!";
+                document.getElementById("uploadMessage").style.display = "block"; // Показываем сообщение
             } else {
                 alert("Ошибка загрузки файла.");
             }
