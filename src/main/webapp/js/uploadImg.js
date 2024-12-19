@@ -3,7 +3,6 @@ document.getElementById("avatar").addEventListener("change", function (event) {
     const formData = new FormData();
     formData.append("file", fileInput.files[0]); // Добавляем файл в formData
 
-    document.getElementById("loadingSpinner").style.display = "inline-block";
     document.getElementById("profileImage").style.display = "none";
     document.getElementById("uploadMessage").style.display = "none"; // Скрываем сообщение
 
@@ -30,7 +29,6 @@ document.getElementById("avatar").addEventListener("change", function (event) {
         })
         .finally(() => {
             // Скрываем спиннер и показываем изображение
-            document.getElementById("loadingSpinner").style.display = "none";
             document.getElementById("profileImage").style.display = "inline-block";
         });
 });

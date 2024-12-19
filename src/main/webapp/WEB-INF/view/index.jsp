@@ -24,11 +24,18 @@
         position: sticky;
         top: 20px;
     }
-
+    .card {
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
+    }
+    .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 </style>
 
 <div class="container mt-4">
-    <form class="row g-2 search-bar" role="search">
+    <form class="row g-2 search-bar" role="search" id="searchForm">
         <div class="col-10">
             <input type="search" class="form-control" placeholder="Поиск по вакансиям..." aria-label="Search" name="search">
         </div>
@@ -39,40 +46,38 @@
 
     <h1 class="vacancies-title">Актуальные вакансии</h1>
 
-    <div class="row mb-4">
+    <div class="row">
+        <!-- Объявления -->
+        <div id="adContainer" class="col-md-9">
+            <!-- Здесь будут ваши объявления -->
+        </div>
+
+        <!-- Фильтры -->
         <div class="col-md-3 filters-fixed">
             <h5>Фильтры</h5>
-            <form>
+            <form id="filterForm" name="filterForm">
                 <div class="mb-3">
                     <label for="category" class="form-label">Категория</label>
-                    <select id="category" class="form-select" name="category">
-                        <option value="">Все категории</option>
-                        <option value="it">IT</option>
-                        <option value="marketing">Маркетинг</option>
-                        <option value="design">Дизайн</option>
-                        <option value="finance">Финансы</option>
+                    <select class="form-select" id="category" name="category">
+                        <option value="0">Все</option>
+                        <c:forEach var="category" items="${jobCategories}">
+                            <option value="${category.id}">${category.name}</option>
+                        </c:forEach>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="number" class="form-label">Оплата</label>
-                    <input type="number" class="form-control" placeholder="Минимальная оплата" name="minPayment">
-                    <input type="number" class="form-control mt-2" placeholder="Максимальная оплата" name="maxPayment">
+                    <label for="minNumber" class="form-label">Оплата</label>
+                    <input type="number" id="minNumber" class="form-control" placeholder="Минимальная оплата" name="minPayment">
+                    <input type="number" id="maxNumber" class="form-control mt-2" placeholder="Максимальная оплата" name="maxPayment">
                 </div>
                 <button class="btn btn-primary" type="submit">Применить фильтры</button>
             </form>
         </div>
-
-        <div id="adContainer" class="col-md-9">
-        </div>
-
-        <div id="loading" style="display:none;">Загрузка...</div>
-
-
-
-        <div class="col-md-9">
-
-        </div>
     </div>
+
+    <div id="loading" style="display:none;">Загрузка...</div>
 </div>
 
+
 <%@include file="/WEB-INF/view/parts/footer.jsp" %>
+

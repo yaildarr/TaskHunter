@@ -3,4 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type> <!-- Перехват всех исключений -->
+        <location>/WEB-INF/view/error.jsp</location> <!-- Перенаправление на страницу ошибки -->
+    </error-page>
+    <!-- Или для конкретных HTTP ошибок -->
+    <error-page>
+    <error-code>404</error-code> <!-- Обработка ошибки 404 -->
+        <location>/WEB-INF/view/error.jsp</location> <!-- Перенаправление на страницу ошибки -->
+    </error-page>
+    <error-page>
+        <error-code>500</error-code> <!-- Обработка ошибки 500 -->
+        <location>/WEB-INF/view/error.jsp</location> <!-- Перенаправление на страницу ошибки -->
+    </error-page>
 </web-app>

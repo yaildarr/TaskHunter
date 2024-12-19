@@ -8,6 +8,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.logging.Logger;
 
 public class LoginService {
@@ -31,6 +32,7 @@ public class LoginService {
                 HttpSession session = req.getSession();
                 Cookie cookie = new Cookie("user_id", user.getId()+"");
                 cookie.setMaxAge(24*60*60*3);
+                cookie.setPath("/");
                 resp.addCookie(cookie);
                 session.setAttribute("username", user.getUsername());
                 session.setAttribute("user", user);
@@ -45,4 +47,48 @@ public class LoginService {
         }
         return false;
     }
+
+    public boolean checkUserSessionAndCookie(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        try {
+            // Получаем куки
+            Cookie[] cookies = req.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if ("user_id".equals(cookie.getName())) {
+                        // Проверяем, есть ли кука с идентификатором пользователя
+                        String userId = cookie.getValue();
+                        if (userId != null && !userId.isEmpty()) {
+                            // Получаем пользователя из сессии
+                            HttpSession session = req.getSession(false);
+                            if (session != null) {
+                                User user = (User) session.getAttribute("user");
+                                if (user != null && (user.getId() == Integer.parseInt(userId))) {
+                                    return true;
+                                }
+                            } if (session == null) {
+                                req.getSession().setAttribute("user", userDao.getUserById(Integer.parseInt(userId)));
+                                return true;
+                            }
+                        }
+                    } else{
+                        User user = (User) req.getSession().getAttribute("user");
+                        if (user != null) {
+                            Cookie newCookie = new Cookie("user_id", user.getId()+"");
+                            cookie.setMaxAge(24*60*60*3);
+                            resp.addCookie(cookie);
+                            return true;
+                        }
+                    }
+                }
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        // Если куки нет или сессия не содержит нужного пользователя, перенаправляем на страницу логина
+        resp.sendRedirect(req.getServletContext().getContextPath() + "/login");
+        return false;
+    }
+
 }

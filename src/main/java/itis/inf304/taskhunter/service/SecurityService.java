@@ -43,7 +43,7 @@ public class SecurityService {
 
     public boolean register(UserRegistrationDto user) {
         try{
-            LOG.info("newUser " + user.getUsername() + " " + user.getPassword() + " " + user.getEmail() + " " + user.getPassword());
+            LOG.info("newUser " + user.getUsername() + " " + user.getPassword() + " " + user.getEmail() + " " + user.getNumber());
             boolean isUserCreated = userDao.newUser(new UserRegistrationDto(
                     user.getUsername(),
                     user.getEmail(),

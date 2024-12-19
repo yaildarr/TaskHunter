@@ -27,7 +27,8 @@ public class CreateJobService {
         String title = req.getParameter("title");
         LOG.info(title);
         String description = req.getParameter("description");
-        String location = req.getParameter("location");
+        String location = req.getParameter("city");
+        LOG.info(location + " LOCATION");
         String category = req.getParameter("category");
         String payment = req.getParameter("payment");
         LOG.info(category);

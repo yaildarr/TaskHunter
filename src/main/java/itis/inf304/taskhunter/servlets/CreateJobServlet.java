@@ -35,6 +35,7 @@ public class CreateJobServlet extends HttpServlet {
         try {
             List<JobCategory> jobCategories = jobCategoryDao.getJobCategories();
             req.setAttribute("jobCategories",jobCategories);
+            req.setAttribute("title","Разместить объявление");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

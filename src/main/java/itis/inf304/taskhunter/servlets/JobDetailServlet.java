@@ -3,6 +3,7 @@ package itis.inf304.taskhunter.servlets;
 import itis.inf304.taskhunter.entities.Job;
 import itis.inf304.taskhunter.entities.JobCategory;
 import itis.inf304.taskhunter.service.JobService;
+import itis.inf304.taskhunter.service.RespondService;
 import itis.inf304.taskhunter.service.UserService;
 
 import javax.servlet.ServletException;
@@ -22,12 +23,14 @@ public class JobDetailServlet extends HttpServlet {
     JobService jobService;
     Job jobFromDb;
     UserService userService;
+    RespondService respondService;
 
 
     @Override
     public void init() throws ServletException {
         jobService = (JobService) getServletContext().getAttribute("jobService");
         userService = (UserService) getServletContext().getAttribute("userService");
+        respondService = (RespondService) getServletContext().getAttribute("respondService");
     }
 
     @Override
@@ -35,11 +38,13 @@ public class JobDetailServlet extends HttpServlet {
         String jobId = req.getParameter("id");
         try {
             jobFromDb = jobService.getJobById(Integer.parseInt(jobId));
-            req.setAttribute("UserForJobDto",userService.getUserForJobById(jobFromDb.getUserId()));
+            req.setAttribute("respondCount", respondService.checkCountRespond(Integer.parseInt(jobId)));
+            req.setAttribute("userForJobDto",userService.getUserForJobById(jobFromDb.getUserId()));
             req.setAttribute("job", jobFromDb);
             req.setAttribute("jobCategory" , new JobCategory(jobFromDb.getCategoryId()));
+            req.setAttribute("title",jobFromDb.getTitle());
         } catch (SQLException e) {
-            throw new RuntimeException("Не удалось получить данные об объявлении");
+            System.err.println("Не удалось получить данные об объявлении");
         }
         getServletContext().getRequestDispatcher("/WEB-INF/view/jobDetail.jsp").forward(req, resp);
     }

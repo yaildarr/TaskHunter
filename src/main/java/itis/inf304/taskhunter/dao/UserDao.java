@@ -16,6 +16,7 @@ public class UserDao extends AbstractController {
     }
 
     public boolean newUser(UserRegistrationDto user) {
+        System.out.println(user.getNumber());
         String sql = "INSERT INTO user (username, email, password_hash, phone, profile_picture) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement ps = getPrepareStatement(sql)) {
             ps.setString(1, user.getUsername());
@@ -96,4 +97,40 @@ public class UserDao extends AbstractController {
             throw new SQLException("Can't get user from db.", e);
         }
     }
+    public boolean updatePassword(int id, String password) throws SQLException {
+        String sql = "UPDATE user SET password_hash = ? WHERE id = ?";
+        try (PreparedStatement ps = getPrepareStatement(sql)) {
+            ps.setString(1, password);
+            ps.setInt(2, id);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            throw new SQLException("Can't update password.", e);
+        }
+    }
+    public boolean validatePassword(int userId, String hashedPassword) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM user WHERE id = ? AND password_hash = ?";
+        try (PreparedStatement ps = getPrepareStatement(sql)) {
+            ps.setInt(1, userId);
+            ps.setString(2, hashedPassword);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                }
+            }
+        }
+        return false;
+    }
+    public boolean deleteUser(int userId) throws SQLException {
+        String sql = "DELETE FROM user WHERE id = ?";
+        try (PreparedStatement ps = getPrepareStatement(sql)) {
+            ps.setInt(1, userId);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
 }

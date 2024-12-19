@@ -27,6 +27,11 @@ public class initListener implements ServletContextListener {
             sce.getServletContext().setAttribute("jobCategoryService", new JobCategoryService((JobCategoryDao) sce.getServletContext().getAttribute("jobCategoryDao")));
             sce.getServletContext().setAttribute("createJobService", new CreateJobService((JobDao) sce.getServletContext().getAttribute("jobDao")));
             sce.getServletContext().setAttribute("loginService", new LoginService((SecurityService) sce.getServletContext().getAttribute("securityService"), (UserDao) sce.getServletContext().getAttribute("userDao")));
+            sce.getServletContext().setAttribute("cityDao", new CityDao(connectionProvider));
+            sce.getServletContext().setAttribute("cityService", new CityService((CityDao) sce.getServletContext().getAttribute("cityDao")));
+            sce.getServletContext().setAttribute("deleteUserService", new DeleteUserService((UserDao) sce.getServletContext().getAttribute("userDao"), (JobDao) sce.getServletContext().getAttribute("jobDao")));
+            sce.getServletContext().setAttribute("respondDao", new RespondDao(connectionProvider));
+            sce.getServletContext().setAttribute("respondService", new RespondService((RespondDao) sce.getServletContext().getAttribute("respondDao")));
         } catch (Exception e) {
             throw new RuntimeException("Ошибка иницализации" , e);
         }

@@ -41,7 +41,11 @@ public class SendMessageServlet extends HttpServlet {
             }
         }else{
             try {
-                req.getSession().setAttribute("sendMessageStatus", (messageDao.sendMessage(new Message(user.getId(), name, email, message))));
+                boolean status = messageDao.sendMessage(new Message(user.getId(), name, email, message));
+                req.getSession().setAttribute("sendMessageStatus", status);
+                if (status){
+                    resp.sendRedirect(getServletContext().getContextPath() + "/jobs");
+                }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }

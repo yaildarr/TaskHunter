@@ -9,18 +9,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="upload image done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/filter/EncodingFilter.java" afterDir="false" />
+    <list default="true" id="0af8f5d2-c6db-4a5c-8c8e-0b02c32d2849" name="Changes" comment="Dockerfile">
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/CityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/RespondDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/entities/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/filter/CreateJobFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/CityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/DeleteUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/RespondService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/CitySearchServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/DeleteJobServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/DeleteProfileServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ErrorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/FilterAndSearchServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RespondJobServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/SettingsServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/otherUserProfile.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/ajax_scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/respondJob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/searchCity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/JobDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dto/UserForJobDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/dto/UserForJobDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/initListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/CreateJobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/CreateJobService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/JobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/JobService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/SecurityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/AboutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/AboutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ContactServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ContactServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/CreateJobServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/CreateJobServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/JobDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/JobDetailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/LogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/ProfileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/SendMessageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter/servlets/SendMessageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/about.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/about.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/createJob.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/createJob.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/jobDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/jobDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/scroll.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/uploadImg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/uploadImg.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,10 +100,10 @@
   <component name="JspContextManager">
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts/header.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -83,7 +122,7 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -125,7 +164,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -140,10 +179,10 @@
       <recent name="$PROJECT_DIR$/src/main/java/itis/inf304/taskhunter" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/view" />
       <recent name="$PROJECT_DIR$/src/main/webapp/gif" />
       <recent name="$PROJECT_DIR$/src/main/webapp/img" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/img" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/view" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/parts" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -333,7 +372,8 @@
       <workItem from="1733920249105" duration="626000" />
       <workItem from="1733921189415" duration="49000" />
       <workItem from="1733921275694" duration="836000" />
-      <workItem from="1733922606635" duration="28238000" />
+      <workItem from="1733922606635" duration="117392000" />
+      <workItem from="1734587534293" duration="12831000" />
     </task>
     <task id="LOCAL-00001" summary="architecture">
       <option name="closed" value="true" />
@@ -519,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733960802598</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Dockerfile">
+      <option name="closed" value="true" />
+      <created>1734109507970</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1734109507970</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +627,8 @@
     <MESSAGE value="add jobdetail screen" />
     <MESSAGE value="docker" />
     <MESSAGE value="upload image done" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload image done" />
+    <MESSAGE value="Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dockerfile" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

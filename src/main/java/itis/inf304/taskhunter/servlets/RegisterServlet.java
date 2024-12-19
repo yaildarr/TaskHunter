@@ -35,14 +35,15 @@ public class RegisterServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
-        String number = req.getParameter("number");
+        String number = req.getParameter("phone");
         user = new UserRegistrationDto(username, email, number, password);
         try{
             if(securityService.register(user)){
                 User userId = userDao.getUserByEmail(email);
                 HttpSession session = req.getSession();
-                Cookie cookie = new Cookie("user_id", userId+"");
+                Cookie cookie = new Cookie("user_id", userId.getId()+"");
                 cookie.setMaxAge(24*60*60*3);
+                cookie.setPath("/");
                 resp.addCookie(cookie);
                 session.setAttribute("username", userId.getUsername());
                 session.setAttribute("user", userId);
